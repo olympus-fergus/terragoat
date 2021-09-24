@@ -14,4 +14,4 @@ jobs:
         uses: bridgecrewio/checkov-action@master
         with:
           directory: terraform/aws
-          output: sarif
+          output_format: sarif
