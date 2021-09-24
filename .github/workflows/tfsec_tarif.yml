@@ -13,7 +13,7 @@ jobs:
       - name: Clone repo
         uses: actions/checkout@master
 
-      - name: tfsec
+      - name: tfsec check
         uses: tfsec/tfsec-sarif-action@master
         with:
           sarif_file: tfsec.sarif
