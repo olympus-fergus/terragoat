@@ -8,10 +8,14 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
+      - name: Mkdir results-dir
+        # make sure results dir is created
+        run: mkdir -p results-dir
       - name: run kics Scan
         uses: checkmarx/kics-github-action@v1.2
         with:
           path: 'terraform/aws'
+          output_path: results-dir
           output_formats: 'sarif'
           verbose: false
           ignore_on_exit: 'all'
@@ -19,4 +23,4 @@ jobs:
       - name: Upload SARIF kics file
         uses: github/codeql-action/upload-sarif@v1
         with:
-          sarif_file: results.sarif
+          sarif_file: results-dir/results.sarif
