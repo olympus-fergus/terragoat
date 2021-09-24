@@ -14,4 +14,12 @@ jobs:
         uses: bridgecrewio/checkov-action@master
         with:
           directory: terraform/aws
+          quiet: true # optional: display only failed checks
+          soft_fail: true
+          framework: terraform
           output_format: sarif
+      - name: Upload SARIF checkov file
+        uses: github/codeql-action/upload-sarif@v1
+        with:
+          # Path to SARIF file relative to the root of the repository
+          sarif_file: results.sarif
