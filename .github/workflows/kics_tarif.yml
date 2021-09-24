@@ -12,7 +12,8 @@ jobs:
         uses: checkmarx/kics-github-action@v1.2
         with:
           path: 'terraform/aws'
-          output_format: 'sarif'
+          output_formats: 'sarif'
+          verbose: false
 
       - name: Upload SARIF kics file
         uses: github/codeql-action/upload-sarif@v1
