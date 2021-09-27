@@ -16,4 +16,4 @@ jobs:
           directory: terraform/aws
           quiet: true # optional: display only failed checks
           soft_fail: true
-          output_format: json
+          output_format: sarif
