@@ -1,5 +1,8 @@
 name: kiks scanner
 on:
+  push:
+    branches:
+      - master
   pull_request:
 jobs:
   kics:
